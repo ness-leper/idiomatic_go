@@ -4,10 +4,23 @@ import (
 	"fmt"
 )
 
+const x int64 = 10
+
+const (
+  idKey = "id"
+  nameKey = "name"
+)
+
+const z = 20 * 10
+
 func main() {
-  var x int = 10
-  var b byte = 100
-  var sum1 int = x + int(b)
-  var sum2 byte = byte(x) + b
-  fmt.Println(sum1, sum2)
+  const y = "hello"
+
+  fmt.Println(x)
+  fmt.Println(y)
+
+  x = x + 1
+  y = "bye"
+  fmt.Println(x)
+  fmt.Println(y)
 }
