@@ -4,23 +4,21 @@ import (
 	"fmt"
 )
 
-const x int64 = 10
+func main(){
+  ex1()
+  ex2()
+}
 
-const (
-  idKey = "id"
-  nameKey = "name"
-)
+func ex1(){
+  i := 20
+  var f float64
+  f = float64(i)
+  fmt.Println(i, f)
+}
 
-const z = 20 * 10
-
-func main() {
-  const y = "hello"
-
-  fmt.Println(x)
-  fmt.Println(y)
-
-  x = x + 1
-  y = "bye"
-  fmt.Println(x)
-  fmt.Println(y)
+func ex2(){
+  const value = 420
+  var i int = value
+  var f float64 = value
+  fmt.Println(i, f)
 }
