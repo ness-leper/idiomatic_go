@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-	"math/cmplx"
 )
 
 func main() {
-	x := complex(2.5, 3.1)
-	y := complex(10.2, 2)
-  fmt.Println(x + y)
-  fmt.Println(x - y)
-  fmt.Println(x * y)
-  fmt.Println(x / y)
-  fmt.Println(real(x))
-  fmt.Println(imag(y))
-  fmt.Println(cmplx.Abs(x))
+  var x int = 10
+  var b byte = 100
+  var sum1 int = x + int(b)
+  var sum2 byte = byte(x) + b
+  fmt.Println(sum1, sum2)
 }
