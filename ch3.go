@@ -4,8 +4,17 @@ import "fmt"
 
 func main() {
 	nilSlice()
+  printSpaces()
   ex3_1()
+  printSpaces()
   ex3_4()
+  printSpaces()
+  ex3_5()
+  printSpaces()
+}
+
+func printSpaces(){
+  fmt.Println("\n\n\n")
 }
 
 func nilSlice() {
@@ -46,4 +55,16 @@ func ex3_4(){
   fmt.Println("z",z)
   fmt.Println("d",d)
   fmt.Println("e",e)
+}
+
+func ex3_5(){
+  x:=[]string{"a","b","c","d"}
+  y:=x[:2]
+  z:=x[1:]
+  x[1] = "y"
+  y[0] = "x"
+  z[1] = "z"
+  fmt.Println("x:",x)
+  fmt.Println("y:",y)
+  fmt.Println("z:",z)
 }
