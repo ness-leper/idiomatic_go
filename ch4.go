@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	ex4_5()
+	ex4_9()
 }
 
 func ex4_1() {
@@ -27,4 +27,18 @@ func ex4_5() {
 	} else {
 		fmt.Println("That's perfect")
 	}
+}
+
+func ex4_8() {
+  for i:=0; i<10; i++ {
+    fmt.Println(i)
+  }
+}
+
+func ex4_9() {
+  i := 1
+  for i < 100 {
+    fmt.Println(i)
+    i = i * 2
+  }
 }
