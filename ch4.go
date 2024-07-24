@@ -1,12 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
-  x := 10
-  fmt.Println(x)
-  fmt := "oops"
-  fmt.Println(x)
+  ex4_5()
 }
 
 func ex4_1(){
@@ -17,4 +17,15 @@ func ex4_1(){
     fmt.Println(x)
   }
   fmt.Println(x)
+}
+
+func ex4_5(){
+  n := rand.Intn(10)
+  if n == 0 {
+    fmt.Println("Too Low") 
+  } else if n > 5 {
+    fmt.Println("That's too big") 
+  } else {
+    fmt.Println("That's perfect")
+  }
 }
