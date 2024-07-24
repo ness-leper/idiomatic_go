@@ -121,4 +121,8 @@ func ex3_10() {
 
 	v, ok = m["goodbye"]
 	fmt.Println(v, ok)
+
+  fmt.Println(m,len(m))
+  clear(m)
+  fmt.Println(m,len(m))
 }
