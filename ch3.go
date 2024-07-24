@@ -13,6 +13,8 @@ func main() {
   printSpaces()
   ex3_6()
   printSpaces()
+  copySlice()
+  printSpaces()
 }
 
 func printSpaces(){
@@ -79,3 +81,13 @@ func ex3_6(){
   fmt.Println("x:", x)
   fmt.Println("y:",y)
 }
+
+func copySlice(){
+  x:=[]int{1,2,3,4}
+  d:=[4]int{5,6,7,8}
+  y:=make([]int,2)
+  copy(y,d[:])
+  fmt.Println(y)
+  copy(d[:],x)
+  fmt.Println(d)
+} 
