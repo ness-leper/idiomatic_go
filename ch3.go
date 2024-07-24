@@ -18,6 +18,9 @@ func main() {
 
 	ex3_10()
 	printSpaces()
+
+  structExperiment()
+  printSpaces()
 }
 
 func printSpaces() {
@@ -125,4 +128,18 @@ func ex3_10() {
   fmt.Println(m,len(m))
   clear(m)
   fmt.Println(m,len(m))
+}
+
+func structExperiment(){
+  var person struct {
+    name string
+    age int
+    pet string
+  }
+
+  person.name = "bob"
+  person.age = 50
+  person.pet = "dog"
+
+  fmt.Println(person)
 }
