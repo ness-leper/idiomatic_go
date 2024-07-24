@@ -3,7 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	exercise1()
+	exercise2()
+}
+
+func exercise2(){
+  message := "Hi 👩 and 👨"
+  fmt.Println(message)
+  runes := []rune(message)
+  fmt.Println(runes[3])
 }
 
 func printSpaces() {
