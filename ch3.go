@@ -11,6 +11,8 @@ func main() {
   printSpaces()
   ex3_5()
   printSpaces()
+  ex3_6()
+  printSpaces()
 }
 
 func printSpaces(){
@@ -67,4 +69,13 @@ func ex3_5(){
   fmt.Println("x:",x)
   fmt.Println("y:",y)
   fmt.Println("z:",z)
+}
+
+func ex3_6(){
+  x:=[]string{"a","b","c","d"}
+  y:=x[:2]
+  fmt.Println(cap(x),cap(y))
+  y = append(y, "z")
+  fmt.Println("x:", x)
+  fmt.Println("y:",y)
 }
