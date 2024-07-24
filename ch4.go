@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	ex4_12()
+	ex4_13()
 }
 
 func ex4_1() {
@@ -20,7 +20,7 @@ func ex4_1() {
 }
 
 func ex4_5() {
-	if n := rand.Intn(10);n == 0 {
+	if n := rand.Intn(10); n == 0 {
 		fmt.Println("Too Low")
 	} else if n > 5 {
 		fmt.Println("That's too big")
@@ -30,32 +30,39 @@ func ex4_5() {
 }
 
 func ex4_8() {
-  for i:=0; i<10; i++ {
-    fmt.Println(i)
-  }
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 }
 
 func ex4_9() {
-  i := 1
-  for i < 100 {
-    fmt.Println(i)
-    i = i * 2
-  }
+	i := 1
+	for i < 100 {
+		fmt.Println(i)
+		i = i * 2
+	}
 }
 
 func ex4_12() {
-  for i:=1;i<100;i++{
-    if i%3 == 0 && i%5==0 {
-      fmt.Println("FizzBuzz")
-      continue
-    }
-    if i%3 == 0 {
-      fmt.Println("Fizz")
-      continue
-    }
-    if i%5 == 0 {
-      fmt.Println("Buzz")
-      continue
-    }
-  }
+	for i := 1; i < 100; i++ {
+		if i%3 == 0 && i%5 == 0 {
+			fmt.Println("FizzBuzz")
+			continue
+		}
+		if i%3 == 0 {
+			fmt.Println("Fizz")
+			continue
+		}
+		if i%5 == 0 {
+			fmt.Println("Buzz")
+			continue
+		}
+	}
+}
+
+func ex4_13() {
+	evenVals := []int{2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+	for i, v := range evenVals {
+		fmt.Println(i, v)
+	}
 }
