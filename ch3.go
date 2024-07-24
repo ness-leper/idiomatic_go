@@ -3,24 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	nilSlice()
-	printSpaces()
-	ex3_1()
-	printSpaces()
-	ex3_4()
-	printSpaces()
-	ex3_5()
-	printSpaces()
-	ex3_6()
-	printSpaces()
-	copySlice()
-	printSpaces()
-
-	ex3_10()
-	printSpaces()
-
-  structExperiment()
-  printSpaces()
+	exercise1()
 }
 
 func printSpaces() {
@@ -125,21 +108,32 @@ func ex3_10() {
 	v, ok = m["goodbye"]
 	fmt.Println(v, ok)
 
-  fmt.Println(m,len(m))
-  clear(m)
-  fmt.Println(m,len(m))
+	fmt.Println(m, len(m))
+	clear(m)
+	fmt.Println(m, len(m))
 }
 
-func structExperiment(){
-  var person struct {
-    name string
-    age int
-    pet string
-  }
+func structExperiment() {
+	var person struct {
+		name string
+		age  int
+		pet  string
+	}
 
-  person.name = "bob"
-  person.age = 50
-  person.pet = "dog"
+	person.name = "bob"
+	person.age = 50
+	person.pet = "dog"
 
-  fmt.Println(person)
+	fmt.Println(person)
+}
+
+func exercise1() {
+	greetings := []string{"Hello", "Hola", "नमस्कार", "こんにちは", "Приві"}
+	fmt.Println(greetings)
+
+	a := greetings[:2]
+	b := greetings[1:4]
+	c := greetings[3:]
+
+	fmt.Println(a, b, c)
 }
