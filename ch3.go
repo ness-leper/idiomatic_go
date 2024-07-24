@@ -4,21 +4,24 @@ import "fmt"
 
 func main() {
 	nilSlice()
-  printSpaces()
-  ex3_1()
-  printSpaces()
-  ex3_4()
-  printSpaces()
-  ex3_5()
-  printSpaces()
-  ex3_6()
-  printSpaces()
-  copySlice()
+	printSpaces()
+	ex3_1()
+	printSpaces()
+	ex3_4()
+	printSpaces()
+	ex3_5()
+	printSpaces()
+	ex3_6()
+	printSpaces()
+	copySlice()
+	printSpaces()
+  
+  ex3_10()
   printSpaces()
 }
 
-func printSpaces(){
-  fmt.Println("\n\n\n")
+func printSpaces() {
+	fmt.Println("\n")
 }
 
 func nilSlice() {
@@ -48,46 +51,60 @@ func ex3_1() {
 
 }
 
-func ex3_4(){
-  x:=[]string{"a","b","c","d"}
-  y:=x[:2]
-  z:=x[1:]
-  d:=x[1:3]
-  e:=x[:]
-  fmt.Println("x",x)
-  fmt.Println("y",y)
-  fmt.Println("z",z)
-  fmt.Println("d",d)
-  fmt.Println("e",e)
+func ex3_4() {
+	x := []string{"a", "b", "c", "d"}
+	y := x[:2]
+	z := x[1:]
+	d := x[1:3]
+	e := x[:]
+	fmt.Println("x", x)
+	fmt.Println("y", y)
+	fmt.Println("z", z)
+	fmt.Println("d", d)
+	fmt.Println("e", e)
 }
 
-func ex3_5(){
-  x:=[]string{"a","b","c","d"}
-  y:=x[:2]
-  z:=x[1:]
-  x[1] = "y"
-  y[0] = "x"
-  z[1] = "z"
-  fmt.Println("x:",x)
-  fmt.Println("y:",y)
-  fmt.Println("z:",z)
+func ex3_5() {
+	x := []string{"a", "b", "c", "d"}
+	y := x[:2]
+	z := x[1:]
+	x[1] = "y"
+	y[0] = "x"
+	z[1] = "z"
+	fmt.Println("x:", x)
+	fmt.Println("y:", y)
+	fmt.Println("z:", z)
 }
 
-func ex3_6(){
-  x:=[]string{"a","b","c","d"}
-  y:=x[:2]
-  fmt.Println(cap(x),cap(y))
-  y = append(y, "z")
-  fmt.Println("x:", x)
-  fmt.Println("y:",y)
+func ex3_6() {
+	x := []string{"a", "b", "c", "d"}
+	y := x[:2]
+	fmt.Println(cap(x), cap(y))
+	y = append(y, "z")
+	fmt.Println("x:", x)
+	fmt.Println("y:", y)
 }
 
-func copySlice(){
-  x:=[]int{1,2,3,4}
-  d:=[4]int{5,6,7,8}
-  y:=make([]int,2)
-  copy(y,d[:])
-  fmt.Println(y)
-  copy(d[:],x)
-  fmt.Println(d)
-} 
+func copySlice() {
+	x := []int{1, 2, 3, 4}
+	d := [4]int{5, 6, 7, 8}
+	y := make([]int, 2)
+	copy(y, d[:])
+	fmt.Println(y)
+	copy(d[:], x)
+	fmt.Println(d)
+}
+
+func ex3_10(){
+  totalWins := map[string]int{}
+  totalWins["Orcas"] = 1
+  totalWins["Lions"] = 2
+  fmt.Println(totalWins["Orcas"])
+  fmt.Println(totalWins["Kittins"])
+
+  totalWins["Kittens"]++
+  fmt.Println(totalWins["Kittens"])
+
+  totalWins["Lions"] = 3
+  fmt.Println(totalWins["Lions"])
+}
