@@ -3,14 +3,40 @@ package main
 import "fmt"
 
 func main() {
-	exercise2()
+	exercise3()
 }
 
-func exercise2(){
-  message := "Hi 👩 and 👨"
-  fmt.Println(message)
-  runes := []rune(message)
-  fmt.Println(runes[3])
+func exercise2() {
+	message := "Hi 👩 and 👨"
+	fmt.Println(message)
+	runes := []rune(message)
+	fmt.Println(runes[3])
+}
+
+func exercise3() {
+  type Employee struct {
+    firstName string
+    lastName string
+    id int
+  }
+  first := Employee {
+    "jack",
+    "johnson",
+    1,
+  }
+
+  second := Employee {
+    firstName:"test",
+    lastName:"test",
+    id: 2,
+  }
+
+  var third Employee
+  third.firstName = "Test"
+  third.lastName = "test"
+  third.id = 3
+
+  fmt.Println(first, second, third)
 }
 
 func printSpaces() {
