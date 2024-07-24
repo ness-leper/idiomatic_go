@@ -6,7 +6,15 @@ import (
 )
 
 func main() {
-	ex4_22()
+	exercise1()
+}
+
+func exercise1() {
+	stored := make([]int, 0, 100)
+	for i := 0; i < 100; i++ {
+    stored = append(stored, rand.Intn(100))
+	}
+	fmt.Println(stored)
 }
 
 func ex4_1() {
