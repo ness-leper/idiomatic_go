@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	ex4_21()
+	ex4_22()
 }
 
 func ex4_1() {
@@ -99,14 +99,29 @@ func ex4_19() {
 
 func ex4_21() {
 	words := []string{"a", "cow", "smile", "gopher", "octopus", "anthropologist"}
-  for _,word := range words {
-    switch wordLen := len(word); {
-    case wordLen < 5:
-      fmt.Println(word, "is a short word")
-    case wordLen > 10:
-      fmt.Println(word, "is a long word")
-    default:
-      fmt.Println(word, "Is the perfect length!")
-    }
-  }
+	for _, word := range words {
+		switch wordLen := len(word); {
+		case wordLen < 5:
+			fmt.Println(word, "is a short word")
+		case wordLen > 10:
+			fmt.Println(word, "is a long word")
+		default:
+			fmt.Println(word, "Is the perfect length!")
+		}
+	}
+}
+
+func ex4_22() {
+	for i := 1; i < 100; i++ {
+		switch {
+		case i%3 == 0 && i%5 == 0:
+			fmt.Println(i, "FizzBuzz")
+		case i%3 == 0:
+			fmt.Println(i, "Fizz")
+		case i%5 == 0:
+			fmt.Println(i, "Buzz")
+		default:
+			fmt.Println(i)
+		}
+	}
 }
