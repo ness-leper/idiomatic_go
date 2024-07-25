@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	exercise2()
+	exercise3()
 }
 
 func exercise1() {
@@ -35,6 +35,17 @@ func exercise2() {
 			fmt.Println("never mind")
 		}
 	}
+}
+
+func exercise3(){
+  var total int
+
+  // Question: What is the likely bug?
+  // The bug is that we shadowed total - it's being set to the zero value over an dover so it is only showing the value of i
+  for i := 0; i <=10; i++ {
+    total := total + i
+    fmt.Println(total)
+  }
 }
 
 func ex4_1() {
