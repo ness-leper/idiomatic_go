@@ -25,12 +25,25 @@ func main()  {
   for i:=0;i<5;i++ {
     f(i)
   }
+
+  fmt.Println(addVals(1,10,15,25))
 }
 
 func addToBase(base int, vals ...int) []int {
   out := make([]int,0,len(vals))
   for _, v := range vals {
     out = append(out, base + v)
+  }
+  return out
+}
+
+/*
+Hello, this is describing a thing
+*/
+func addVals(vals ...int) int {
+  var out int
+  for _, v := range vals {
+    out = out + v
   }
   return out
 }
