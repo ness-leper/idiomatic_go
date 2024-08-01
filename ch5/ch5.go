@@ -17,6 +17,14 @@ func main()  {
     os.Exit(1)
   }
   fmt.Println(result, remainder)
+
+  f := func (j int){
+    fmt.Println("printing",j,"from inside of an anonymous function")
+  }
+
+  for i:=0;i<5;i++ {
+    f(i)
+  }
 }
 
 func addToBase(base int, vals ...int) []int {
