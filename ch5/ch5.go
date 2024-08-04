@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"sort"
 )
 
 func main()  {
@@ -27,6 +28,9 @@ func main()  {
   }
 
   fmt.Println(addVals(1,10,15,25))
+
+
+  SortingSlices()
 }
 
 func addToBase(base int, vals ...int) []int {
@@ -38,7 +42,7 @@ func addToBase(base int, vals ...int) []int {
 }
 
 /*
-Hello, this is describing a thing
+Add as many integers as you want to be tallied seperated by a comma
 */
 func addVals(vals ...int) int {
   var out int
@@ -54,4 +58,22 @@ func divAndRemainder(num, denom int) (int, int, error) {
   }
 
   return num / denom, num % denom, nil
+}
+
+func SortingSlices(){
+  type Person struct {
+    FirstName string
+    LastName string
+    Age int
+  }
+  people := []Person{
+    {"Pat","Patterson",37},
+    {"Tracy","Bobdaughter",23},
+    {"Fred","Fredson",18},
+  }
+
+  sort.Slice(people, func(i,j int) bool {
+    return people[i].LastName < people[j].LastName
+  })
+  fmt.Println(people)
 }
