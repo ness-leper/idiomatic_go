@@ -8,8 +8,8 @@ import (
 )
 
 type person struct {
-  age int
-  name string
+	age  int
+	name string
 }
 
 func main() {
@@ -37,11 +37,22 @@ func main() {
 	SortingSlices()
 	funcAsValues()
 
-  p := person{}
-  i := 2
-  s := "Hello"
-  modifyFails(i, s, p)
-  fmt.Println(i, s, p)
+	p := person{}
+	i := 2
+	s := "Hello"
+	modifyFails(i, s, p)
+	fmt.Println(i, s, p)
+
+  m := map[int]string{
+    1: "first",
+    2: "second",
+  }
+  modMap(m)
+  fmt.Println(m)
+
+  newS := []int{1,2,3}
+  modSlice(newS)
+  fmt.Println(newS)
 }
 
 func addToBase(base int, vals ...int) []int {
@@ -105,7 +116,20 @@ func funcAsValues() {
 }
 
 func modifyFails(i int, s string, p person) {
-  i = i * 2
-  s = "Goodbye"
-  p.name = "Bob"
+	i = i * 2
+	s = "Goodbye"
+	p.name = "Bob"
+}
+
+func modMap(m map[int]string) {
+	m[2] = "hello"
+	m[3] = "goodbye"
+	delete(m, 1)
+}
+
+func modSlice(s []int) {
+	for k, v := range s {
+		s[k] = v * 2
+	}
+	s = append(s, 10)
 }
