@@ -66,6 +66,10 @@ func main() {
   }
 
   fmt.Println("The file has % bytes", fileLength)
+
+  helloPrefix := prefixer("Hello")
+  fmt.Println(helloPrefix("Nick"))
+  fmt.Println(helloPrefix("Jack"))
 }
 
 func ex1() {
@@ -214,4 +218,10 @@ func modSlice(s []int) {
 		s[k] = v * 2
 	}
 	s = append(s, 10)
+}
+
+func prefixer(i string) func(string) string {
+  return func (v string) string {
+    return i + " " + v
+  }
 }
