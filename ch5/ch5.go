@@ -3,6 +3,8 @@ package main
 import (
 	"errors"
 	"fmt"
+	"io"
+	"log"
 	"os"
 	"sort"
 )
@@ -43,16 +45,44 @@ func main() {
 	modifyFails(i, s, p)
 	fmt.Println(i, s, p)
 
-  m := map[int]string{
-    1: "first",
-    2: "second",
-  }
-  modMap(m)
-  fmt.Println(m)
+	m := map[int]string{
+		1: "first",
+		2: "second",
+	}
+	modMap(m)
+	fmt.Println(m)
 
-  newS := []int{1,2,3}
-  modSlice(newS)
-  fmt.Println(newS)
+	newS := []int{1, 2, 3}
+	modSlice(newS)
+	fmt.Println(newS)
+
+	ex1()
+
+  ex2()
+}
+
+func ex1() {
+	var (
+		add = func(i, j int) int { return i + j }
+		sub = func(i, j int) int { return i - j }
+		mul = func(i, j int) int { return i * j }
+		div = func(i, j int) (int, error) {
+			if j == 0 {
+				return 0, errors.New("division by zero")
+			}
+			return (i / j), nil
+		}
+	)
+
+	fmt.Println("adding", add(1, 2))
+	fmt.Println("subtracting", sub(1, 2))
+	fmt.Println("multiplying", mul(1, 2))
+	dividing, err := div(1, 0)
+	if err != nil {
+		fmt.Println("Error: You tried dividing by zero", err)
+	} else {
+		fmt.Println("dividing", dividing)
+	}
 }
 
 func addToBase(base int, vals ...int) []int {
@@ -61,6 +91,28 @@ func addToBase(base int, vals ...int) []int {
 		out = append(out, base+v)
 	}
 	return out
+}
+
+func ex2() {
+	if len(os.Args) < 2 {
+		log.Fatal("no file specified")
+	}
+	f, err := os.Open(os.Args[1])
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	data := make([]byte, 2048)
+	for {
+		count, err := f.Read(data)
+		os.Stdout.Write(data[:count])
+		if err != nil {
+			if err != io.EOF {
+				log.Fatal(err)
+			}
+			break
+		}
+	}
 }
 
 /*
