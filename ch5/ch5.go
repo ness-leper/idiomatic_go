@@ -59,6 +59,13 @@ func main() {
 	ex1()
 
   ex2()
+
+  fileLength, err := fileLen("ch5.go")
+  if err != nil {
+    log.Fatal("File does not exist")
+  }
+
+  fmt.Println("The file has % bytes", fileLength)
 }
 
 func ex1() {
@@ -113,6 +120,29 @@ func ex2() {
 			break
 		}
 	}
+}
+
+func fileLen (i string) (int,error) {
+  f, err := os.Open(i)
+  if err != nil {
+    return 0, err 
+  }
+  defer f.Close()
+
+  data := make([]byte, 2048)
+  total := 0
+	for {
+		count, err := f.Read(data)
+    total += count
+		if err != nil {
+			if err != io.EOF {
+				log.Fatal(err)
+			}
+			break
+		}
+	}
+
+  return total, nil
 }
 
 /*
