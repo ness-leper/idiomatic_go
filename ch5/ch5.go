@@ -7,6 +7,11 @@ import (
 	"sort"
 )
 
+type person struct {
+  age int
+  name string
+}
+
 func main() {
 	fmt.Println(addToBase(3))
 	fmt.Println(addToBase(3, 2))
@@ -31,6 +36,12 @@ func main() {
 
 	SortingSlices()
 	funcAsValues()
+
+  p := person{}
+  i := 2
+  s := "Hello"
+  modifyFails(i, s, p)
+  fmt.Println(i, s, p)
 }
 
 func addToBase(base int, vals ...int) []int {
@@ -91,4 +102,10 @@ func funcAsValues() {
 	for i := 0; i < 3; i++ {
 		fmt.Println(twoBase(i), threeBase(i))
 	}
+}
+
+func modifyFails(i int, s string, p person) {
+  i = i * 2
+  s = "Goodbye"
+  p.name = "Bob"
 }
